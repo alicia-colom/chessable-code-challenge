@@ -1,6 +1,6 @@
 //  CONSTANTS:
-export const xAxis = [1, 2, 3, 4, 5, 6, 7, 8];
-export const yAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
+export const xAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
+export const yAxis = [1, 2, 3, 4, 5, 6, 7, 8];
 
 // COLORS:
 export const colorPrimary = "#254EDD";
@@ -17,5 +17,3 @@ export const colorBlacker = "#111111";
 export const colorFontMain = "#404040";
 export const colorBoardDark = "#7296B8";
 export const colorBoardLight = "#CBDEFC";
-
-// INTEGER VALUES:
