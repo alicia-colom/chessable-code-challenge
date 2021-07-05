@@ -3,6 +3,38 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import {
+  faChessPawn,
+  faChessRook,
+  faChessKnight,
+  faChessBishop,
+  faChessQueen,
+  faChessKing,
+  faChessBoard,
+  faChess,
+  faSearchMinus,
+  faSearchPlus,
+  faHeart,
+  faBrain,
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(
+  fab,
+  faChessPawn,
+  faChessRook,
+  faChessKnight,
+  faChessBishop,
+  faChessQueen,
+  faChessKing,
+  faChessBoard,
+  faChess,
+  faSearchMinus,
+  faSearchPlus,
+  faHeart,
+  faBrain
+);
 
 ReactDOM.render(
   <React.StrictMode>
