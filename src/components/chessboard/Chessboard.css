@@ -1,16 +1,18 @@
 .boardContainer {
-  height: 16rem;
-  width: 16rem;
-  margin: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(8, 2rem);
-  grid-template-rows: repeat(8, 2rem);
-  align-self: center;
-  background-color: #7296b8; /* colorBoardDark */
-}
+  height: 15.5rem;
+  width: 15.5rem;
+  margin-top: 1.5rem;
+  padding: 0.1rem;
 
-.tile {
-  background-color: #cbdefc; /* colorBoardLight */
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(8, 1.875rem);
+  grid-template-rows: repeat(8, 1.875rem);
+
+  background-color: #313143; /* colorSecondary */
+  border-radius: 5px;
   color: #404040; /* colorFontMain */
   font-size: 0.75rem;
 }
