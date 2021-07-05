@@ -1,13 +1,19 @@
+.preHeader {
+  height: 1rem;
+  width: auto;
+  background-color: #0027AA; /* colorPrimaryDark */
+}
+
 .headerContainer {
-  height: 4rem;
-  padding: 0 1.5rem;
+  height: clamp(2.5rem, 2.5rem + 1.5vw, 4rem);
   display: flex;
+  justify-content: center;
   align-items: center;
-  background-color: #254edd; /* colorPrimaryDark */
+  background-color: #254edd; /* colorPrimary */
   color: #f4f4f4; /* colorBg */
 }
 
 h1 {
-  margin: 0;
   text-transform: capitalize;
+  font-size: clamp(1.125rem, 0.75rem + 1.5vw, 2.25rem);
 }
