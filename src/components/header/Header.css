@@ -1,0 +1,13 @@
+.headerContainer {
+  height: 4rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #254edd; /* colorPrimaryDark */
+  color: #f4f4f4; /* colorBg */
+}
+
+h1 {
+  margin: 0;
+  text-transform: capitalize;
+}

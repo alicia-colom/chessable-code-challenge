@@ -1,0 +1,16 @@
+.boardContainer {
+  height: 16rem;
+  width: 16rem;
+  margin: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(8, 2rem);
+  grid-template-rows: repeat(8, 2rem);
+  align-self: center;
+  background-color: #7296b8; /* colorBoardDark */
+}
+
+.tile {
+  background-color: #cbdefc; /* colorBoardLight */
+  color: #404040; /* colorFontMain */
+  font-size: 0.75rem;
+}
