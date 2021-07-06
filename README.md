@@ -26,7 +26,3 @@ You can learn more in the [CHESSABLE CODE CHALLENGE DOCUMENTATION](https://www.n
 
 You also can see and run the code in [CODESANDBOX](https://www.notion.so/aliciacolom/CHESSABLE-CODE-CHALLENGE-f445504018ac424ea04914ff24cc757d#bf0d4271dd4b4677977ee679de834fbd).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://codesandbox.io/s/stupefied-grass-85f6l?file=/src/index.js)
-
