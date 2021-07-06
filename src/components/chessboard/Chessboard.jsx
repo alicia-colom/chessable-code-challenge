@@ -47,7 +47,7 @@ const Chessboard = ({ zoom }) => {
   piecesInitialPosition.push(new buildPiece("knight", 1, 0));
   piecesInitialPosition.push(new buildPiece("knight", 6, 0));
   piecesInitialPosition.push(new buildPiece("bishop", 2, 0));
-  piecesInitialPosition.push(new buildPiece("knight", 5, 0));
+  piecesInitialPosition.push(new buildPiece("bishop", 5, 0));
   piecesInitialPosition.push(new buildPiece("queen", 4, 0));
   piecesInitialPosition.push(new buildPiece("king", 3, 0));
 
