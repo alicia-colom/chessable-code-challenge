@@ -12,7 +12,7 @@ const Tile = styled.div`
   align-items: center;
 `;
 
-const Board = (props) => {
+const Board = ({ zoom }) => {
   const board = [];
   const ranksReversed = constants.ranks.reverse();
 
@@ -77,5 +77,5 @@ const Board = (props) => {
 export default Board;
 
 Board.propTypes = {
-  zoom: PropTypes.integer,
+  zoom: PropTypes.number,
 };

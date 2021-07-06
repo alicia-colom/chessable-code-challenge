@@ -21,7 +21,7 @@ const Slider = ({ zoom, handleZoom }) => {
           icon="search-minus"
           fixedWidth
           color="purple"
-          size="ml"
+          size="xs"
           className="zoomIcon"
         />
         <Mui.Button
@@ -39,7 +39,7 @@ const Slider = ({ zoom, handleZoom }) => {
         <FontAwesomeIcon
           icon="search-plus"
           fixedWidth
-          size="ml"
+          size="lg"
           color="purple"
           className="zoomIcon"
         />
@@ -51,6 +51,6 @@ const Slider = ({ zoom, handleZoom }) => {
 export default Slider;
 
 Slider.propTypes = {
-  zoom: PropTypes.integer,
+  zoom: PropTypes.number,
   handleZoom: PropTypes.func,
 };
