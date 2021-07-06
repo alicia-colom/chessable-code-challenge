@@ -3,7 +3,8 @@ import { shallow, configure } from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import each from "jest-each";
 
-import Chessboard, { Tile } from "./Chessboard";
+import Chessboard from "./Chessboard";
+import { Tile } from "./Chessboard.styles";
 import Piece from "../piece/Piece";
 import * as constants from "../../utils/constants";
 

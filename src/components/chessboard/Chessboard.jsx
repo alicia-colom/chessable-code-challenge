@@ -1,35 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Piece from "../piece/Piece";
+import { Tile, Board } from "./Chessboard.styles";
 import * as constants from "../../utils/constants";
-import styled from "styled-components";
-
-export const Tile = styled.div`
-  background-color: ${(props) =>
-    (props.x + props.y) % 2 === 0
-      ? constants.colorBoardLight
-      : constants.colorBoardDark};
-  display: flex;
-  align-items: center;
-`;
-
-const Board = styled.div`
-  height: ${(props) => props.zoom * 15.5}rem;
-  width: ${(props) => props.zoom * 15.5}rem;
-  margin-top: 1.5rem;
-  padding: 0.1rem;
-  align-self: center;
-  align-content: center;
-  justify-content: center;
-  display: grid;
-  gap: 0;
-  grid-template-columns: repeat(8, ${(props) => props.zoom * 1.875}rem);
-  grid-template-rows: repeat(8, ${(props) => props.zoom * 1.875}rem);
-  background-color: ${constants.colorSecondary};
-  border-radius: 5px;
-  font-size: 0.75rem;
-  color: ${constants.colorFontMain};
-`;
 
 const Chessboard = ({ zoom }) => {
   const board = [];
