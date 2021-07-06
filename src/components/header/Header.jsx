@@ -3,11 +3,9 @@ import "./Header.css";
 
 function Header() {
   return (
-    <header>
+    <header className="headerContainer">
       <div className="preHeader"></div>
-      <div className="headerContainer">
-        <h1 className="headerTitle">Chessable code challenge</h1>
-      </div>
+      <h1 className="headerTitle">Chessable code challenge</h1>
     </header>
   );
 }

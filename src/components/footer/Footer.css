@@ -4,18 +4,19 @@
   position: fixed;
   bottom: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   background-color: #0027aa; /* colorPrimaryDark */
   color: #f4f4f4; /* colorBg */
 }
 
 .footerText {
+  padding-right: 2.75rem;
   font-size: clamp(0.625rem, 0.2rem + 1vw, 0.75rem);
   color: #6d7aff; /* colorPrimaryLight  */
 }
 
 .footerCredits {
-font-weight: bold;
-color: #6d7aff;
+  font-weight: bold;
+  color: #6d7aff; /* colorPrimaryLight  */
 }

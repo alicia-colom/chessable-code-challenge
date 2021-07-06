@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Board.css";
 import Piece from "../piece/Piece";
-import * as variables from "../../utils/constants";
+import * as constants from "../../utils/constants";
 import styled from "styled-components";
 
 const Tile = styled.div`
@@ -11,9 +12,9 @@ const Tile = styled.div`
   align-items: center;
 `;
 
-const Board = () => {
+const Board = (props) => {
   const board = [];
-  const ranksReversed = variables.ranks.reverse();
+  const ranksReversed = constants.ranks.reverse();
 
   const piecesInitialPosition = [];
   function buildPiece(icon, x, y) {
@@ -46,8 +47,8 @@ const Board = () => {
   }
 
   for (let iY = 0; iY < ranksReversed.length; iY++) {
-    for (let iX = 0; iX < variables.files.length; iX++) {
-      const eachTileIdentifier = variables.files[iX] + ranksReversed[iY];
+    for (let iX = 0; iX < constants.files.length; iX++) {
+      const eachTileIdentifier = constants.files[iX] + ranksReversed[iY];
       const tileContent = piecesInitialPosition
         .filter((eachPiece) => eachPiece.x === iX && eachPiece.y === iY)
         .map((eachPiece) => (
@@ -66,8 +67,6 @@ const Board = () => {
     }
   }
 
-  console.log(board);
-
   return (
     <div id="board" className="boardContainer">
       {board}
@@ -76,3 +75,7 @@ const Board = () => {
 };
 
 export default Board;
+
+Board.propTypes = {
+  zoom: PropTypes.integer,
+};

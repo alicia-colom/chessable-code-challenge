@@ -1,19 +1,23 @@
-.preHeader {
-  height: clamp(0.5rem, 0.5rem + 1vw, 1rem);
-  width: auto;
-  background-color: #0027AA; /* colorPrimaryDark */
-}
-
 .headerContainer {
-  height: clamp(2.5rem, 2.5rem + 1.5vw, 4rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
   background-color: #254edd; /* colorPrimary */
+  display: block;
   color: #f4f4f4; /* colorBg */
 }
 
-h1 {
+.preHeader {
+  height: clamp(0.5rem, 0.5rem + 1vw, 1rem);
+  background-color: #0027aa; /* colorPrimaryDark */
+}
+
+.headerTitle {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  height: clamp(2.5rem, 2.5rem + 1.5vw, 4rem);
   text-transform: capitalize;
   font-size: clamp(1.125rem, 0.75rem + 1.5vw, 2.25rem);
 }
