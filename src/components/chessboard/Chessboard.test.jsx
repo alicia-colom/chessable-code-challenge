@@ -1,6 +1,7 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
+import each from "jest-each";
 
 import Chessboard, { Tile } from "./Chessboard";
 import Piece from "../piece/Piece";
@@ -22,14 +23,21 @@ describe("Chessboard component test", () => {
     const wrapper = shallow(<Chessboard zoom={1} />);
     expect(wrapper.find({ color: constants.colorWhiter }).length).toBe(16);
   });
-  //TODO: add Piece as selector
+
   it("Should have 16 black pieces", () => {
     const wrapper = shallow(<Chessboard zoom={1} />);
     expect(wrapper.find({ color: constants.colorBlacker }).length).toBe(16);
   });
 
-  it("Should have same number of pieces than", () => {
+  each([
+    ["knight", 4],
+    ["rook", 4],
+    ["bishop", 4],
+    ["pawn", 16],
+    ["queen", 2],
+    ["king", 2],
+  ]).it("Should have '%s' '%d' pieces", (text, expected) => {
     const wrapper = shallow(<Chessboard zoom={1} />);
-    expect(wrapper.find({ color: constants.colorBlacker }).length).toBe(16);
+    expect(wrapper.find({ icon: text }).length).toBe(expected);
   });
 });
