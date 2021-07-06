@@ -15,52 +15,34 @@ const Chessboard = () => {
   const board = [];
   const yAxisReversed = variables.yAxis.reverse();
 
+  const piecesInitalPosition = [];
   function buildPiece(icon, x, y) {
     this.icon = icon;
     this.x = x;
     this.y = y;
   }
-  const rookWhiteLeft = new buildPiece("rook", 0, 0);
-  const rookWhiteRight = new buildPiece("rook", 7, 0);
-  const knightWhiteLeft = new buildPiece("knight", 1, 0);
-  const knightWhiteRight = new buildPiece("knight", 6, 0);
-  const bishopWhiteLeft = new buildPiece("bishop", 2, 0);
-  const bishopWhiteRight = new buildPiece("knight", 5, 0);
-  const queenWhite = new buildPiece("queen", 4, 0);
-  const kingWhite = new buildPiece("king", 3, 0);
 
-  const rookBlackLeft = new buildPiece("rook", 0, 7);
-  const rookBlackRight = new buildPiece("rook", 7, 7);
-  const knightBlackLeft = new buildPiece("knight", 1, 7);
-  const knightBlackRight = new buildPiece("knight", 6, 7);
-  const bishopBlackLeft = new buildPiece("bishop", 2, 7);
-  const bishopBlackRight = new buildPiece("bishop", 5, 7);
-  const queenBlack = new buildPiece("queen", 3, 7);
-  const kingBlack = new buildPiece("king", 4, 7);
+  piecesInitalPosition.push(new buildPiece("rook", 0, 0));
+  piecesInitalPosition.push(new buildPiece("rook", 7, 0));
+  piecesInitalPosition.push(new buildPiece("knight", 1, 0));
+  piecesInitalPosition.push(new buildPiece("knight", 6, 0));
+  piecesInitalPosition.push(new buildPiece("bishop", 2, 0));
+  piecesInitalPosition.push(new buildPiece("knight", 5, 0));
+  piecesInitalPosition.push(new buildPiece("queen", 4, 0));
+  piecesInitalPosition.push(new buildPiece("king", 3, 0));
 
-  const piecesInitalPosition = [];
-  piecesInitalPosition.push(
-    rookWhiteLeft,
-    rookWhiteRight,
-    knightWhiteLeft,
-    knightWhiteRight,
-    bishopWhiteLeft,
-    bishopWhiteRight,
-    queenWhite,
-    kingWhite,
-    rookBlackLeft,
-    rookBlackRight,
-    knightBlackLeft,
-    knightBlackRight,
-    bishopBlackLeft,
-    bishopBlackRight,
-    queenBlack,
-    kingBlack
-  );
+  piecesInitalPosition.push(new buildPiece("rook", 0, 7));
+  piecesInitalPosition.push(new buildPiece("rook", 7, 7));
+  piecesInitalPosition.push(new buildPiece("knight", 1, 7));
+  piecesInitalPosition.push(new buildPiece("knight", 6, 7));
+  piecesInitalPosition.push(new buildPiece("bishop", 2, 7));
+  piecesInitalPosition.push(new buildPiece("bishop", 5, 7));
+  piecesInitalPosition.push(new buildPiece("queen", 4, 7));
+  piecesInitalPosition.push(new buildPiece("king", 3, 7));
+
   for (let i = 0; i < 8; i++) {
-    const pawnWhite = new buildPiece("pawn", i, 1);
-    const pawnBlack = new buildPiece("pawn", i, 6);
-    piecesInitalPosition.push(pawnWhite, pawnBlack);
+    piecesInitalPosition.push(new buildPiece("pawn", i, 1));
+    piecesInitalPosition.push(new buildPiece("pawn", i, 6));
   }
 
   for (let iY = 0; iY < yAxisReversed.length; iY++) {
