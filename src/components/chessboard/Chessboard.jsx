@@ -4,7 +4,7 @@ import Piece from "../piece/Piece";
 import * as constants from "../../utils/constants";
 import styled from "styled-components";
 
-const Tile = styled.div`
+export const Tile = styled.div`
   background-color: ${(props) =>
     (props.x + props.y) % 2 === 0
       ? constants.colorBoardLight
