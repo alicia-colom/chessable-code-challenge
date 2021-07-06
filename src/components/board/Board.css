@@ -17,12 +17,3 @@
   color: #404040; /* colorFontMain */
   font-size: 0.75rem;
 }
-
-.piece {
-  stroke: #313143; /* colorSecondary */
-  stroke-width: 0.75rem;
-}
-
-/* .tileName {
-  z-index: 0;
-} */

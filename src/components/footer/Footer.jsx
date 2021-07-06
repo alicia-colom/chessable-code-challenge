@@ -7,11 +7,11 @@ function Footer() {
     <footer className="footerContainer">
       <small className="footerText">
         Made with{" "}
-        <FontAwesomeIcon icon="brain" fixedWidth size="sm" color="#fabada" /> y{" "}
+        <FontAwesomeIcon icon="brain" fixedWidth size="sm" color="#fabada" /> and{" "}
         <FontAwesomeIcon icon="heart" fixedWidth size="sm" color="red" /> by{" "}
         <a
-          href="https://www.linkedin.com/in/aliciacolomortega/"
           className="footerCredits"
+          href="https://www.linkedin.com/in/aliciacolomortega/"
           target="_blank"
           rel="noreferrer"
         >
