@@ -1,8 +1,12 @@
 import React from "react";
-import "../Slider/scss";
+import "./Slider.css";
 
 const Slider = (props) => {
-  return <></>;
+  return (
+    <>
+      <div>Hello</div>
+    </>
+  );
 };
 
 export default Slider;
