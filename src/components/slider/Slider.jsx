@@ -48,7 +48,7 @@ const Slider = ({ handleZoom }) => {
             aria-label="Zoom"
             defaultValue={1}
             min={0.5}
-            max={3}
+            max={2.5}
             step={0.25}
             marks={constants.zoomValues}
             valueLabelDisplay="auto"
