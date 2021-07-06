@@ -13,10 +13,10 @@
 .footerText {
   padding-right: 2.75rem;
   font-size: clamp(0.625rem, 0.2rem + 1vw, 0.75rem);
-  color: #6d7aff; /* colorPrimaryLight  */
+  color: #98aff9; /* colorPrimaryLight  */
 }
 
 .footerCredits {
   font-weight: bold;
-  color: #6d7aff; /* colorPrimaryLight  */
+  color: #98aff9; /* colorPrimaryLight  */
 }

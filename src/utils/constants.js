@@ -5,7 +5,7 @@ export const ranks = [1, 2, 3, 4, 5, 6, 7, 8];
 // COLORS:
 export const colorPrimary = "#254EDD";
 export const colorPrimaryDark = "#0027AA";
-export const colorPrimaryLight = "#6D7AFF";
+export const colorPrimaryLight = "#98aff9";
 export const colorSecondary = "#313143";
 export const colorSecondaryDark = "#0A081C";
 export const colorSecondaryLight = "#5B5A6B";

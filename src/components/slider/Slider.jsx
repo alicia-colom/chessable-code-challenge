@@ -1,11 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Slider.css";
-import * as Mui from '@material-ui/core';
+import * as constants from "../../utils/constants";
+import * as Mui from "@material-ui/core";
 // import { makeStyles, Paper, Slider, Button } from "@material-ui/core/";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+const useStyles = Mui.makeStyles({
+  zoomIcon: {
+    color: constants.colorPrimaryDark,
+  },
+  sliderContainer: {
+    width: "fit-content",
+    padding: "0.375rem",
+    margin: "1.5rem 2.75rem 0 0",
+    position: "fixed",
+    right: 0,
+    bottom: "clamp(3rem, 3rem + 1vw, 5rem)",
+    backgroundColor: constants.colorPrimaryLight,
+  },
+  slideButton: {
+    height: "1rem",
+    width: "1rem",
+    color: constants.colorWhiter,
+  },
+});
+
 const Slider = ({ zoom, handleZoom }) => {
+  const cls = useStyles();
+
   const zoomIn = () => {
     if (zoom < 6) handleZoom(zoom * 2);
   };
@@ -16,32 +39,27 @@ const Slider = ({ zoom, handleZoom }) => {
 
   return (
     <>
-      <Mui.Paper elevation={4} className="sliderContainer">
+      <Mui.Paper elevation={4} className={cls.sliderContainer}>
         <FontAwesomeIcon
-          icon="search-minus"
+          icon="chess"
           fixedWidth
-          color="purple"
           size="xs"
-          className="zoomIcon"
+          className={cls.zoomIcon}
         />
-        <Mui.Button
-          className="slideButton"
-          onClick={() => zoomOut()}
-        >
+        <Mui.Button className={cls.slideButton} onClick={() => zoomOut()}>
           25
         </Mui.Button>
-        <Mui.Button className="slideButton" onClick={() => zoomIn()}>
+        <Mui.Button className={cls.slideButton} onClick={() => zoomIn()}>
           50
         </Mui.Button>
-        <Mui.Button className="slideButton" onClick={() => zoomIn()}>
+        <Mui.Button className={cls.slideButton} onClick={() => zoomIn()}>
           75
         </Mui.Button>
         <FontAwesomeIcon
-          icon="search-plus"
+          icon="chess"
           fixedWidth
           size="lg"
-          color="purple"
-          className="zoomIcon"
+          className={cls.zoomIcon}
         />
       </Mui.Paper>
     </>
