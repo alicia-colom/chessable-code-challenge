@@ -8,8 +8,6 @@ import Footer from "./components/footer/Footer";
 function App() {
   const [zoom, setZoom] = useState(1);
 
-  console.log("new Zoom value:", zoom);
-  
   return (
     <div className="app">
       <Header />

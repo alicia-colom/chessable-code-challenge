@@ -9,14 +9,17 @@ const PieceIcon = styled.div`
 `;
 
 const Piece = ({ icon, color, zoom }) => {
+const literalColor = color === "#111111" ? "black" : "white";
+
   return (
     <PieceIcon zoom={zoom}>
       <FontAwesomeIcon
         icon={"chess-" + icon}
-        id={icon + (color === "#111111" ? "Black" : "White")} //TODO: change condition
+        id={icon + "-"+ literalColor} 
         fixedWidth
         color={color}
         className="piece"
+        title={icon +" "+ literalColor}
       />
     </PieceIcon>
   );

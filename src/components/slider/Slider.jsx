@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as constants from "../../utils/constants";
 import * as Mui from "@material-ui/core";
-import CircleIcon from "@material-ui/icons/FiberManualRecord";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const useStyles = Mui.makeStyles({
