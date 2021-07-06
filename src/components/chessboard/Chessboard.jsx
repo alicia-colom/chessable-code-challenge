@@ -5,9 +5,16 @@ import Piece from "../piece/Piece";
 import * as constants from "../../utils/constants";
 import styled from "styled-components";
 
+const Tile = styled.div`
+  background-color: ${(props) =>
+    (props.x + props.y) % 2 === 0 ? "#cbdefc" : "#7296B8"};
+  display: flex;
+  align-items: center;
+`;
+
 const Board = styled.div`
-  height: 15.5rem;
-  width: 15.5rem;
+  height: ${(props) => props.zoom * 15.5}rem;
+  width: ${(props) => props.zoom * 15.5}rem;
   margin-top: 1.5rem;
   padding: 0.1rem;
 
@@ -16,21 +23,14 @@ const Board = styled.div`
   justify-content: center;
   display: grid;
   gap: 0;
-  grid-template-columns: repeat(8, 1.875rem);
-  grid-template-rows: repeat(8, 1.875rem);
+  grid-template-columns: repeat(8, ${(props) => props.zoom * 1.875}rem);
+  grid-template-rows: repeat(8, ${(props) => props.zoom * 1.875}rem);
 
   background-color: #313143; /* colorSecondary */
   border-radius: 5px;
 
   font-size: 0.75rem;
   color: #404040; /* colorFontMain */
-`;
-
-const Tile = styled.div`
-  background-color: ${(props) =>
-    (props.x + props.y) % 2 === 0 ? "#cbdefc" : "#7296B8"};
-  display: flex;
-  align-items: center;
 `;
 
 const Chessboard = ({ zoom }) => {
@@ -67,19 +67,6 @@ const Chessboard = ({ zoom }) => {
     piecesInitialPosition.push(new buildPiece("pawn", i, 6));
   }
 
-  const pieceSize = (zoom) => {
-    switch (zoom) {
-      case 1:
-        return "2x";
-      case 2:
-        return "3x";
-      case 3:
-        return "4x";
-      case 4:
-        return "5x";
-    }
-  };
-
   for (let iY = 0; iY < ranksReversed.length; iY++) {
     for (let iX = 0; iX < constants.files.length; iX++) {
       const eachTileIdentifier = constants.files[iX] + ranksReversed[iY];
@@ -90,12 +77,18 @@ const Chessboard = ({ zoom }) => {
             key={eachTileIdentifier}
             icon={eachPiece.icon}
             color={iY <= 1 ? "#FEFEFE" : "#111111"} // colorWhiter : colorBlacker
-            zoom={pieceSize(zoom)}
+            zoom={zoom}
           />
         ));
 
       board.push(
-        <Tile key={eachTileIdentifier} id={eachTileIdentifier} x={iX} y={iY}>
+        <Tile
+          key={eachTileIdentifier}
+          id={eachTileIdentifier}
+          x={iX}
+          y={iY}
+          zoom={zoom}
+        >
           {tileContent}
         </Tile>
       );

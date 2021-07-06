@@ -46,19 +46,19 @@ const Slider = ({ zoom, handleZoom }) => {
         </Mui.IconButton>
         <Mui.IconButton
           className={cls.slideButton}
+          onClick={() => handleZoom(1.5)}
+        >
+          <CircleIcon />
+        </Mui.IconButton>
+        <Mui.IconButton
+          className={cls.slideButton}
           onClick={() => handleZoom(2)}
         >
           <CircleIcon />
         </Mui.IconButton>
         <Mui.IconButton
           className={cls.slideButton}
-          onClick={() => handleZoom(3)}
-        >
-          <CircleIcon />
-        </Mui.IconButton>
-        <Mui.IconButton
-          className={cls.slideButton}
-          onClick={() => handleZoom(4)}
+          onClick={() => handleZoom(2.5)}
         >
           <CircleIcon />
         </Mui.IconButton>

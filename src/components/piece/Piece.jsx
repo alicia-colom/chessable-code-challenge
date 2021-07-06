@@ -2,17 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Piece.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled from "styled-components";
+
+const PieceIcon = styled.div`
+  font-size: ${(props) => props.zoom * 1.5}rem;
+`;
 
 const Piece = ({ icon, color, zoom }) => {
   return (
-    <FontAwesomeIcon
-      icon={"chess-" + icon}
-      fixedWidth
-      size={zoom}
-      color={color}
-      zoom={zoom}
-      className="piece"
-    />
+    <PieceIcon zoom={zoom}>
+      <FontAwesomeIcon
+        icon={"chess-" + icon}
+        fixedWidth
+        color={color}
+        className="piece"
+      />
+    </PieceIcon>
   );
 };
 
