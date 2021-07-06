@@ -13,7 +13,7 @@ const Piece = ({ icon, color, zoom }) => {
     <PieceIcon zoom={zoom}>
       <FontAwesomeIcon
         icon={"chess-" + icon}
-        id={icon + (color === "#111111" ? "Black" : "White")}
+        id={icon + (color === "#111111" ? "Black" : "White")} //TODO: change condition
         fixedWidth
         color={color}
         className="piece"

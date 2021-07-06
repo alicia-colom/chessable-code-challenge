@@ -14,7 +14,7 @@ function App() {
     <div className="app">
       <Header />
       <Chessboard zoom={zoom} />
-      <Slider zoom={zoom} handleZoom={setZoom} />
+      <Slider handleZoom={setZoom} />
       <Footer />
     </div>
   );

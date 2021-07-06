@@ -27,7 +27,7 @@ const useStyles = Mui.makeStyles({
   },
 });
 
-const Slider = ({ zoom, handleZoom }) => {
+const Slider = ({ handleZoom }) => {
   const cls = useStyles();
 
   const handleChange = (ev, newValue) => {
