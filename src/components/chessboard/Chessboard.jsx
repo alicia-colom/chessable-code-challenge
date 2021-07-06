@@ -1,9 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Board.css";
+import "./Chessboard.css";
 import Piece from "../piece/Piece";
 import * as constants from "../../utils/constants";
 import styled from "styled-components";
+
+const Board = styled.div`
+  height: 15.5rem;
+  width: 15.5rem;
+  margin-top: 1.5rem;
+  padding: 0.1rem;
+
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(8, 1.875rem);
+  grid-template-rows: repeat(8, 1.875rem);
+
+  background-color: #313143; /* colorSecondary */
+  border-radius: 5px;
+
+  font-size: 0.75rem;
+  color: #404040; /* colorFontMain */
+`;
 
 const Tile = styled.div`
   background-color: ${(props) =>
@@ -12,7 +33,7 @@ const Tile = styled.div`
   align-items: center;
 `;
 
-const Board = ({ zoom }) => {
+const Chessboard = ({ zoom }) => {
   const board = [];
   const ranksReversed = constants.ranks.reverse();
 
@@ -46,6 +67,19 @@ const Board = ({ zoom }) => {
     piecesInitialPosition.push(new buildPiece("pawn", i, 6));
   }
 
+  const pieceSize = (zoom) => {
+    switch (zoom) {
+      case 1:
+        return "2x";
+      case 2:
+        return "3x";
+      case 3:
+        return "4x";
+      case 4:
+        return "5x";
+    }
+  };
+
   for (let iY = 0; iY < ranksReversed.length; iY++) {
     for (let iX = 0; iX < constants.files.length; iX++) {
       const eachTileIdentifier = constants.files[iX] + ranksReversed[iY];
@@ -56,6 +90,7 @@ const Board = ({ zoom }) => {
             key={eachTileIdentifier}
             icon={eachPiece.icon}
             color={iY <= 1 ? "#FEFEFE" : "#111111"} // colorWhiter : colorBlacker
+            zoom={pieceSize(zoom)}
           />
         ));
 
@@ -68,14 +103,14 @@ const Board = ({ zoom }) => {
   }
 
   return (
-    <div id="board" className="boardContainer">
+    <Board id="board" zoom={zoom}>
       {board}
-    </div>
+    </Board>
   );
 };
 
-export default Board;
+export default Chessboard;
 
-Board.propTypes = {
+Chessboard.propTypes = {
   zoom: PropTypes.number,
 };

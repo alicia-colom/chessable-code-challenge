@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Slider.css";
 import * as constants from "../../utils/constants";
 import * as Mui from "@material-ui/core";
-// import { makeStyles, Paper, Slider, Button } from "@material-ui/core/";
+import CircleIcon from "@material-ui/icons/FiberManualRecord";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const useStyles = Mui.makeStyles({
@@ -17,25 +16,18 @@ const useStyles = Mui.makeStyles({
     position: "fixed",
     right: 0,
     bottom: "clamp(3rem, 3rem + 1vw, 5rem)",
+    zIndex: 1,
     backgroundColor: constants.colorPrimaryLight,
   },
   slideButton: {
-    height: "1rem",
-    width: "1rem",
+    height: "0.5rem",
+    width: "0.5rem",
     color: constants.colorWhiter,
   },
 });
 
 const Slider = ({ zoom, handleZoom }) => {
   const cls = useStyles();
-
-  const zoomIn = () => {
-    if (zoom < 6) handleZoom(zoom * 2);
-  };
-
-  const zoomOut = () => {
-    if (zoom > 1.25) handleZoom(zoom / 2);
-  };
 
   return (
     <>
@@ -46,15 +38,30 @@ const Slider = ({ zoom, handleZoom }) => {
           size="xs"
           className={cls.zoomIcon}
         />
-        <Mui.Button className={cls.slideButton} onClick={() => zoomOut()}>
-          25
-        </Mui.Button>
-        <Mui.Button className={cls.slideButton} onClick={() => zoomIn()}>
-          50
-        </Mui.Button>
-        <Mui.Button className={cls.slideButton} onClick={() => zoomIn()}>
-          75
-        </Mui.Button>
+        <Mui.IconButton
+          className={cls.slideButton}
+          onClick={() => handleZoom(1)}
+        >
+          <CircleIcon />
+        </Mui.IconButton>
+        <Mui.IconButton
+          className={cls.slideButton}
+          onClick={() => handleZoom(2)}
+        >
+          <CircleIcon />
+        </Mui.IconButton>
+        <Mui.IconButton
+          className={cls.slideButton}
+          onClick={() => handleZoom(3)}
+        >
+          <CircleIcon />
+        </Mui.IconButton>
+        <Mui.IconButton
+          className={cls.slideButton}
+          onClick={() => handleZoom(4)}
+        >
+          <CircleIcon />
+        </Mui.IconButton>
         <FontAwesomeIcon
           icon="chess"
           fixedWidth
