@@ -7,7 +7,6 @@ function Footer() {
     <footer className="footerContainer">
       <small className="footerText">
         Made with{" "}
-        <FontAwesomeIcon icon="brain" fixedWidth size="sm" color="#fabada" /> and{" "}
         <FontAwesomeIcon icon="heart" fixedWidth size="sm" color="red" /> by{" "}
         <a
           className="footerCredits"

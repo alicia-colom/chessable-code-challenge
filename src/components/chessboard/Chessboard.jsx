@@ -6,7 +6,9 @@ import styled from "styled-components";
 
 const Tile = styled.div`
   background-color: ${(props) =>
-    (props.x + props.y) % 2 === 0 ? "#cbdefc" : "#7296B8"};
+    (props.x + props.y) % 2 === 0
+      ? constants.colorBoardLight
+      : constants.colorBoardDark};
   display: flex;
   align-items: center;
 `;
@@ -23,10 +25,10 @@ const Board = styled.div`
   gap: 0;
   grid-template-columns: repeat(8, ${(props) => props.zoom * 1.875}rem);
   grid-template-rows: repeat(8, ${(props) => props.zoom * 1.875}rem);
-  background-color: #313143; /* colorSecondary */
+  background-color: ${constants.colorSecondary};
   border-radius: 5px;
   font-size: 0.75rem;
-  color: #404040; /* colorFontMain */
+  color: ${constants.colorFontMain};
 `;
 
 const Chessboard = ({ zoom }) => {
@@ -72,7 +74,7 @@ const Chessboard = ({ zoom }) => {
           <Piece
             key={eachTileIdentifier}
             icon={eachPiece.icon}
-            color={iY <= 1 ? "#FEFEFE" : "#111111"} // colorWhiter : colorBlacker
+            color={iY <= 1 ? constants.colorWhiter : constants.colorBlacker}
             zoom={zoom}
           />
         ));
