@@ -13,6 +13,7 @@ const Piece = ({ icon, color, zoom }) => {
     <PieceIcon zoom={zoom}>
       <FontAwesomeIcon
         icon={"chess-" + icon}
+        id={icon + (color === "#111111" ? "Black" : "White")}
         fixedWidth
         color={color}
         className="piece"
