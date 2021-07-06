@@ -17,3 +17,12 @@ export const colorBlacker = "#111111";
 export const colorFontMain = "#404040";
 export const colorBoardDark = "#7296B8";
 export const colorBoardLight = "#CBDEFC";
+
+// ZOOM VALUES:
+export const zoomValues = [
+  { value: 0.5 },
+  { value: 1 },
+  { value: 1.5 },
+  { value: 2 },
+  { value: 2.5 },
+];

@@ -10,24 +10,29 @@ const useStyles = Mui.makeStyles({
     color: constants.colorPrimaryDark,
   },
   sliderContainer: {
-    width: "fit-content",
-    padding: "0.375rem",
+    width: "8rem",
+    padding: "0.3125rem 0.625rem",
     margin: "1.5rem 2.75rem 0 0",
     position: "fixed",
     right: 0,
     bottom: "clamp(3rem, 3rem + 1vw, 5rem)",
+    display: "flex",
+    alignItems: "center",
     zIndex: 1,
     backgroundColor: constants.colorPrimaryLight,
+    opacity: 0.9,
   },
-  slideButton: {
-    height: "0.5rem",
-    width: "0.5rem",
-    color: constants.colorWhiter,
+  slider:    {
+    margin: "0 0.5rem",
   },
 });
 
 const Slider = ({ zoom, handleZoom }) => {
   const cls = useStyles();
+
+  const handleChange = (ev, newValue) => {
+    handleZoom(newValue);
+  };
 
   return (
     <>
@@ -38,30 +43,19 @@ const Slider = ({ zoom, handleZoom }) => {
           size="xs"
           className={cls.zoomIcon}
         />
-        <Mui.IconButton
-          className={cls.slideButton}
-          onClick={() => handleZoom(1)}
-        >
-          <CircleIcon />
-        </Mui.IconButton>
-        <Mui.IconButton
-          className={cls.slideButton}
-          onClick={() => handleZoom(1.5)}
-        >
-          <CircleIcon />
-        </Mui.IconButton>
-        <Mui.IconButton
-          className={cls.slideButton}
-          onClick={() => handleZoom(2)}
-        >
-          <CircleIcon />
-        </Mui.IconButton>
-        <Mui.IconButton
-          className={cls.slideButton}
-          onClick={() => handleZoom(2.5)}
-        >
-          <CircleIcon />
-        </Mui.IconButton>
+        <Mui.Slider
+          id="zoom"
+          aria-label="Zoom"
+          defaultValue={1}
+          min={0.5}
+          max={2.5}
+          step={0.5}
+          marks={constants.zoomValues}
+          valueLabelDisplay="auto"
+          valueLabelFormat={(x) => x}
+          onChange={handleChange}
+          className={cls.slider}
+        />
         <FontAwesomeIcon
           icon="chess"
           fixedWidth
